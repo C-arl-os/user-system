@@ -1,0 +1,23 @@
+{
+  "name": "user-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C-arl-os/user-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C-arl-os/user-system/issues"
+  },
+  "homepage": "https://github.com/C-arl-os/user-system#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
