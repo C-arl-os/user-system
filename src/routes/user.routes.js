@@ -8,7 +8,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    res.json({ message: 'Crear un nuevo usuario' });
+    const {nombre, email, password} = req.body;
+    res.json({
+        message: 'Crear un nuevo usuario',
+        data: {nombre, email, password}
+    })
+    
 });
 
 
