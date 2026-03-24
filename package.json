@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/C-arl-os/user-system#readme",
   "dependencies": {
+    "dotenv": "^17.3.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
