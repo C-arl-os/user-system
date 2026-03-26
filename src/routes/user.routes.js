@@ -8,8 +8,5 @@ router.post('/', userController.create);
 
 router.put('/:id', userController.update);
 
-router.delete('/:id', (req, res) => {
-    res.json({ message: `Eliminar usuario con ID ${req.params.id}` });
-});
-
+router.delete('/:id', userController.deleteById);
 module.exports = router;

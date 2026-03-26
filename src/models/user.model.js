@@ -26,5 +26,10 @@ const update = async (id, nombre, email) => {
     );
     return result.rows[0];
 };
+
+
+const deleteById = async (id) => {
+    await pool.query('DELETE FROM users WHERE id=$1', [id]);
+};
 // Exporta la función para que otros archivos la usen
-module.exports = { getAll, create, update };
+module.exports = { getAll, create, update, deleteById };

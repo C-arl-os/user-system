@@ -29,4 +29,8 @@ const update = async (id, nombre, email) => {
     return updatedUser;
 }
 
-module.exports = { getAll, create, update };
+const deleteById = async (id) => {
+    await userModel.deleteById(id);
+};
+
+module.exports = { getAll, create, update, deleteById };

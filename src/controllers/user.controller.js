@@ -35,4 +35,14 @@ const update = async (req, res) => {
 
 };
 
-module.exports = { getAll, create, update };
+const deleteById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await userService.deleteById(id);
+        res.json({ message: 'Usuario eliminado correctamente' });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ message: 'Error al eliminar usuario' });
+    }
+};
+module.exports = { getAll, create, update, deleteById };
