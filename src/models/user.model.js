@@ -19,5 +19,12 @@ const create = async (nombre, email, password) => {
     return result.rows[0];
 };
 
+const update = async (id, nombre, email) => {
+    const result =await pool.query(
+        'UPDATE users SET nombre=$1, email=$2 WHERE id=$3 RETURNING id, nombre, email, created_at',
+        [nombre, email, id]
+    );
+    return result.rows[0];
+};
 // Exporta la función para que otros archivos la usen
-module.exports = { getAll, create };
+module.exports = { getAll, create, update };

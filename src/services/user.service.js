@@ -24,4 +24,9 @@ const create = async (nombre, email, password) => {
     return newUser;
 };
 
-module.exports = { getAll, create };
+const update = async (id, nombre, email) => {
+    const updatedUser = await userModel.update(id, nombre, email);
+    return updatedUser;
+}
+
+module.exports = { getAll, create, update };

@@ -21,4 +21,18 @@ const create = async (req, res) => {
     }
 };
 
-module.exports = { getAll, create };
+const update = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const { nombre, email } = req.body;
+        const updatedUser = await userService.update(id, nombre, email);
+        res.json(updatedUser);  
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ message: 'Error al actualizar usuario' });
+    }
+
+
+};
+
+module.exports = { getAll, create, update };
