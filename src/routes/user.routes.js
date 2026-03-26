@@ -4,9 +4,7 @@ const userController = require('../controllers/user.controller');
 
 router.get('/', userController.getAll);
 
-router.post('/', (req, res) => {
-    res.json({ message: 'Crear un nuevo usuario' });
-});
+router.post('/', userController.create);
 
 router.put('/:id', (req, res) => {
     res.json({ message: `Actualizar usuario con ID ${req.params.id}` });

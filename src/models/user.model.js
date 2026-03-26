@@ -11,5 +11,13 @@ const getAll = async () => {
     return result.rows;
 };
 
+const create = async (nombre, email, password) => {
+    const result = await pool.query(
+        'INSERT INTO users (nombre, email, password) VALUES ($1, $2, $3) RETURNING id, nombre, email, created_at',
+        [nombre, email, password]
+    );
+    return result.rows[0];
+};
+
 // Exporta la función para que otros archivos la usen
-module.exports = { getAll };
+module.exports = { getAll, create };
