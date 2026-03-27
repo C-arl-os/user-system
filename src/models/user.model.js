@@ -32,4 +32,14 @@ const deleteById = async (id) => {
     await pool.query('DELETE FROM users WHERE id=$1', [id]);
 };
 // Exporta la función para que otros archivos la usen
-module.exports = { getAll, create, update, deleteById };
+
+
+
+const findByEmail = async (email) => {
+    const result = await pool.query(
+        'SELECT * FROM users WHERE email = $1',
+        [email]
+    );
+    return result.rows[0];
+};
+module.exports = { getAll, create, update, deleteById, findByEmail };
