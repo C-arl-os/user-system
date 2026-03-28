@@ -17,6 +17,9 @@ const create = async (req, res) => {
         res.status(201).json(newUser);
     } catch (error) {
         console.error(error.message);
+        if (error.code === '23505') {
+            return res.status(400).json({ message: 'El email ya está registrado' });
+        }
         res.status(500).json({ message: 'Error al crear usuario' });
     }
 };
